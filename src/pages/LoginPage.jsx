@@ -11,7 +11,7 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/auth', { email, password });
+      const response = await axios.post('https://crm-backend-ppq9.onrender.com/api/auth', { email, password });
       
       // Store the new token (this will refresh the token)
       localStorage.setItem('token', response.data.token); 
