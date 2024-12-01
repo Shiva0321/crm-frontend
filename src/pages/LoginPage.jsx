@@ -19,6 +19,7 @@ const LoginPage = () => {
       // Redirect to the dashboard or another page
       navigate('/dashboard');
     } catch (err) {
+      console.error('Login error:', err);
       setError('Invalid email or password');
     }
   };
