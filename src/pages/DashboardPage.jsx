@@ -24,7 +24,7 @@ const Dashboard = () => {
   
     try {
       // through this api the order of logged in user only will display. 
-      const response = await axios.get('http://localhost:5000/api/ordersbyemail', { headers });
+      const response = await axios.get('https://crm-backend-ppq9.onrender.com/api/ordersbyemail', { headers });
       setOrders(response.data); // Set the orders for the logged-in user
     } catch (err) {
       console.error('Error fetching orders:', err);
@@ -47,7 +47,7 @@ const Dashboard = () => {
     try {
       // Ensure the orderId is a string before sending it
       //this api use to  increment and decrement of quantity.
-      await axios.patch(`http://localhost:5000/api/updatequantity/${orderId}`, { action }, { headers });
+      await axios.patch(`https://crm-backend-ppq9.onrender.com/api/updatequantity/${orderId}`, { action }, { headers });
       fetchOrders(); // Refresh orders after update
     } catch (error) {
       console.error('Error updating quantity:', error.response?.data || error.message);
@@ -61,7 +61,7 @@ const Dashboard = () => {
     try {
       // Ensure the orderId is a string before sending the delete request
       //this api use to delete the specific order
-      await axios.delete(`http://localhost:5000/api/deleteorders/${orderId}`, { headers });
+      await axios.delete(`https://crm-backend-ppq9.onrender.com/api/deleteorders/${orderId}`, { headers });
       fetchOrders(); // Refresh orders after deletion
     } catch (error) {
       console.error('Error deleting order:', error.response?.data || error.message);
